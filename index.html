@@ -116,6 +116,19 @@
   .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace}
 
   @media print{ nav.sticky{display:none} body{background:#fff} section{break-inside:avoid} }
+
+  /* === Responsive tweaks for phrases grid on mobile === */
+  @media (max-width: 820px) {
+    #frases .grid { grid-template-columns: 1fr !important; }
+    #frases .card { width: 100%; }
+  }
+
+  /* Emergency bubbles: soft red tone */
+  .bubble-emergency{
+    background:#ffe5e5 !important;
+    border-color:#ffb3b3 !important;
+    color:#b30000 !important;
+  }
 </style>
 </head>
 <body>
@@ -190,42 +203,75 @@
     <p class="footer-note">Tasa de referencia usada: 1 EUR ≈ 165 JPY. Puede variar.</p>
   </section>
 
+  
   <section id="frases">
     <h2>🗣️ Frases útiles (pulsa 🔊 para escuchar)</h2>
     <div class="grid grid-2">
+      <!-- TURÍSTICAS -->
       <div class="card">
-        <div class="bubble">
-          <span><b>こんにちは</b> — Konnichiwa (Hola)</span>
-          <button class="speak-btn" data-phrase="こんにちは">🔊</button>
-        </div>
-        <div class="bubble">
-          <span><b>ありがとうございます</b> — Arigatō gozaimasu (Gracias)</span>
-          <button class="speak-btn" data-phrase="ありがとうございます">🔊</button>
-        </div>
-        <div class="bubble">
-          <span><b>すみません</b> — Sumimasen (Perdón/disculpa)</span>
-          <button class="speak-btn" data-phrase="すみません">🔊</button>
-        </div>
+        <h3 style="margin-top:0;color:#b34e79;">🗺️ Turísticas</h3>
+        <div class="bubble"><span><b>こんにちは</b> — Konnichiwa (Hola)</span><button class="speak-btn" data-phrase="こんにちは">🔊</button></div>
+        <div class="bubble"><span><b>ありがとうございます</b> — Arigatō gozaimasu (Gracias)</span><button class="speak-btn" data-phrase="ありがとうございます">🔊</button></div>
+        <div class="bubble"><span><b>すみません</b> — Sumimasen (Perdón/disculpa)</span><button class="speak-btn" data-phrase="すみません">🔊</button></div>
+        <div class="bubble"><span><b>お願いします</b> — Onegaishimasu (Por favor)</span><button class="speak-btn" data-phrase="お願いします">🔊</button></div>
+        <div class="bubble"><span><b>いくらですか？</b> — Ikura desu ka? (¿Cuánto cuesta?)</span><button class="speak-btn" data-phrase="いくらですか？">🔊</button></div>
+        <div class="bubble"><span><b>駅はどこですか？</b> — Eki wa doko desu ka? (¿Dónde está la estación?)</span><button class="speak-btn" data-phrase="駅はどこですか？">🔊</button></div>
+        <div class="bubble"><span><b>トイレはどこですか？</b> — Toire wa doko desu ka? (¿Baño?)</span><button class="speak-btn" data-phrase="トイレはどこですか？">🔊</button></div>
+        <div class="bubble"><span><b>英語話せますか？</b> — Eigo hanasemasu ka? (¿Hablas inglés?)</span><button class="speak-btn" data-phrase="英語話せますか？">🔊</button></div>
+        <div class="bubble"><span><b>おいしいです！</b> — Oishii desu! (¡Está delicioso!)</span><button class="speak-btn" data-phrase="おいしいです！">🔊</button></div>
+        <div class="bubble"><span><b>ありがとうございました！</b> — Arigatō gozaimashita! (¡Gracias por todo!)</span><button class="speak-btn" data-phrase="ありがとうございました！">🔊</button></div>
+        <div class="bubble"><span><b>写真を撮ってもいいですか？</b> — Shashin o totte mo ii desu ka? (¿Puedo tomar una foto?)</span><button class="speak-btn" data-phrase="写真を撮ってもいいですか？">🔊</button></div>
+        <div class="bubble"><span><b>おすすめは何ですか？</b> — Osusume wa nan desu ka? (¿Qué me recomiendas?)</span><button class="speak-btn" data-phrase="おすすめは何ですか？">🔊</button></div>
+        <div class="bubble"><span><b>どこで切符を買えますか？</b> — Doko de kippu o kaemasu ka? (¿Dónde puedo comprar un boleto?)</span><button class="speak-btn" data-phrase="どこで切符を買えますか？">🔊</button></div>
       </div>
+
+      <!-- MÉDICAS + EMERGENCIA -->
       <div class="card">
-        <div class="bubble">
-          <span><b>お願いします</b> — Onegaishimasu (Por favor)</span>
-          <button class="speak-btn" data-phrase="お願いします">🔊</button>
-        </div>
-        <div class="bubble">
-          <span><b>トイレはどこですか？</b> — Toire wa doko desu ka? (¿Baño?)</span>
-          <button class="speak-btn" data-phrase="トイレはどこですか？">🔊</button>
-        </div>
-        <div class="bubble">
-          <span><b>英語話せますか？</b> — Eigo hanasemasu ka? (¿Hablas inglés?)</span>
-          <button class="speak-btn" data-phrase="英語話せますか？">🔊</button>
-        </div>
+        <h3 style="margin-top:0;color:#b34e79;">🩺 Médicas y Emergencia</h3>
+        <div class="bubble"><span><b>道に迷いました</b> — Michi ni mayoimashita (Estamos perdidas)</span><button class="speak-btn" data-phrase="道に迷いました">🔊</button></div>
+        <div class="bubble"><span><b>気分が悪いです</b> — Kibun ga warui desu (Me siento mal)</span><button class="speak-btn" data-phrase="気分が悪いです">🔊</button></div>
+        <div class="bubble"><span><b>病院に行く必要があります</b> — Byōin ni iku hitsuyō ga arimasu (Necesito ir al médico)</span><button class="speak-btn" data-phrase="病院に行く必要があります">🔊</button></div>
+        <div class="bubble"><span><b>薬はどこで買えますか？</b> — Kusuri wa doko de kaemasu ka? (¿Dónde puedo comprar medicinas?)</span><button class="speak-btn" data-phrase="薬はどこで買えますか？">🔊</button></div>
+        <div class="bubble"><span><b>薬局を探しています</b> — Yakkyoku o sagashiteimasu (Estoy buscando una farmacia)</span><button class="speak-btn" data-phrase="薬局を探しています">🔊</button></div>
+        <div class="bubble"><span><b>アレルギーがあります</b> — Arerugī ga arimasu (Tengo una alergia)</span><button class="speak-btn" data-phrase="アレルギーがあります">🔊</button></div>
+        <div class="bubble"><span><b>熱があります</b> — Netsu ga arimasu (Tengo fiebre)</span><button class="speak-btn" data-phrase="熱があります">🔊</button></div>
+        <div class="bubble"><span><b>頭が痛いです</b> — Atama ga itai desu (Me duele la cabeza)</span><button class="speak-btn" data-phrase="頭が痛いです">🔊</button></div>
+        <div class="bubble"><span><b>救急車を呼んでください</b> — Kyūkyūsha o yonde kudasai (Llame a una ambulancia)</span><button class="speak-btn" data-phrase="救急車を呼んでください">🔊</button></div>
+        <div class="bubble bubble-emergency"><span><b>助けて！</b> — Tasukete! (¡Auxilio!)</span><button class="speak-btn emergency-btn" data-phrase="助けて！">🔊</button></div>
+        <div class="bubble bubble-emergency"><span><b>助けが必要です</b> — Tasuke ga hitsuyō desu (Necesito ayuda)</span><button class="speak-btn emergency-btn" data-phrase="助けが必要です">🔊</button></div>
+        <div class="bubble bubble-emergency"><span><b>警察を呼んでください</b> — Keisatsu o yonde kudasai (Llame a la policía)</span><button class="speak-btn emergency-btn" data-phrase="警察を呼んでください">🔊</button></div>
+        <p style="margin-top:8px"><a class="cta" href="#" id="playEmergency">⏱️ Reproducir solo emergencia</a></p>
       </div>
     </div>
-    <p style="margin-top:10px">
-      <a class="cta" href="#" id="playAll">▶️ Escuchar todas</a>
-    </p>
+    <p style="margin-top:10px"><a class="cta" href="#" id="playAll">▶️ Escuchar todas</a></p>
   </section>
+  <script>
+    // Quick Emergency playback
+    (function(){
+      const btn = document.getElementById('playEmergency');
+      if(!btn) return;
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        const emergency = Array.from(document.querySelectorAll('.bubble-emergency .speak-btn')).map(b=>b.getAttribute('data-phrase'));
+        if(!emergency.length) return;
+        let i = 0;
+        const playNext = () => {
+          if(i >= emergency.length) return;
+          const u = new SpeechSynthesisUtterance(emergency[i++]);
+          u.lang='ja-JP';
+          const vs = window.speechSynthesis.getVoices();
+          const ja = vs.find(v => v.lang && v.lang.toLowerCase().startsWith('ja')) || null;
+          if(ja) u.voice = ja;
+          u.rate = 1.0; u.pitch = 1.0;
+          u.onend = playNext;
+          window.speechSynthesis.cancel();
+          window.speechSynthesis.speak(u);
+        };
+        playNext();
+      });
+    })();
+  </script>
+
 
   <section id="apps">
     <h2>📱 Apps recomendadas</h2>
